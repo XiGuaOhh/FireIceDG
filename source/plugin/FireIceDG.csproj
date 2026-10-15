@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <Loader Condition="'$(Loader)' == ''">Bep</Loader>
+    <AssemblyName>FireIceDG.$(Loader)</AssemblyName>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+    <Reference Include="0Harmony"><HintPath>$(BepPath)/BepInEx/core/0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(GamePath)/A Dance of Fire and Ice_Data/Managed/UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(GamePath)/A Dance of Fire and Ice_Data/Managed/UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Compile Include="MonitorCore.cs" />
+    <Compile Include="BepEntry.cs" Condition="'$(Loader)' == 'Bep'" />
+    <Compile Include="UmmEntry.cs" Condition="'$(Loader)' == 'Umm'" />
+    <Reference Include="BepInEx" Condition="'$(Loader)' == 'Bep'"><HintPath>$(BepPath)/BepInEx/core/BepInEx.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,9 @@
+{
+  "Id": "FireIceDG",
+  "DisplayName": "FireIceDG 失误监听",
+  "Author": "FireIceDG",
+  "Version": "1.0.1",
+  "ManagerVersion": "0.27.0",
+  "AssemblyName": "FireIceDG.Umm.dll",
+  "EntryMethod": "FireIceDG.UmmEntry.Load"
+}
